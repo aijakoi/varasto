@@ -28,7 +28,7 @@ export const Tuotteet = () => {
 
     useEffect(() => {
         const fetchHylly = async () => {
-            const r = await fetch('http://localhost:3004/hylly' + query);
+            const r = await fetch('http://localhost:3004/hylly');
             const data = await r.json();
             setHylly([{id:-1, lyhenne: "Valitse"}, ...data]);
         }
@@ -219,7 +219,6 @@ const Potions = (props) => {
     }, [data]);
 
     const rows = data.map(t => <tr key={t.id}>
-        <td>{t.id}</td>
         <td>{t.nimi}</td>
         <td>{t.maara}</td>
         <td>{t.hylly_id}</td>
@@ -239,7 +238,6 @@ const Potions = (props) => {
                 <table>
                     <thead>
                         <tr>
-                            <td>Id</td>
                             <td>Nimi</td>
                             <td>Määrä</td>
                             <td>Hylly</td>
