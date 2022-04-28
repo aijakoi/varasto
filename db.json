@@ -1,0 +1,174 @@
+{
+  "tuote": [
+    {
+      "nimi": "Abraxan hair",
+      "maara": "5",
+      "hylly_id": "1",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "nimi": "Blood",
+      "maara": 7,
+      "hylly_id": 1
+    },
+    {
+      "id": 3,
+      "nimi": "Caterpillar",
+      "maara": 4,
+      "hylly_id": 1
+    },
+    {
+      "id": 4,
+      "nimi": "Dragon claw",
+      "maara": 2,
+      "hylly_id": 1
+    },
+    {
+      "id": 5,
+      "nimi": "Eyeball",
+      "maara": 7,
+      "hylly_id": 2
+    },
+    {
+      "id": 6,
+      "nimi": "Firefly",
+      "maara": 2,
+      "hylly_id": 2
+    },
+    {
+      "id": 7,
+      "nimi": "Ginger",
+      "maara": 9,
+      "hylly_id": 2
+    },
+    {
+      "id": 8,
+      "nimi": "Herbaria",
+      "maara": 7,
+      "hylly_id": 2
+    },
+    {
+      "id": 9,
+      "nimi": "Iguana blood",
+      "maara": 1,
+      "hylly_id": 3
+    },
+    {
+      "id": 10,
+      "nimi": "Jewelweed",
+      "maara": 6,
+      "hylly_id": 3
+    },
+    {
+      "id": 11,
+      "nimi": "Kelp",
+      "maara": 2,
+      "hylly_id": 3
+    },
+    {
+      "id": 12,
+      "nimi": "Leech",
+      "maara": 3,
+      "hylly_id": 3
+    },
+    {
+      "id": 13,
+      "nimi": "Mandrake",
+      "maara": 5,
+      "hylly_id": 4
+    },
+    {
+      "id": 14,
+      "nimi": "Newt",
+      "maara": 2,
+      "hylly_id": 4
+    },
+    {
+      "id": 15,
+      "nimi": "Octopus powder",
+      "maara": 3,
+      "hylly_id": 4
+    },
+    {
+      "id": 16,
+      "nimi": "Peppermint",
+      "maara": 10,
+      "hylly_id": 4
+    },
+    {
+      "id": 17,
+      "nimi": "Rat tail",
+      "maara": 7,
+      "hylly_id": 5
+    },
+    {
+      "id": 18,
+      "nimi": "Silver",
+      "maara": 2,
+      "hylly_id": 5
+    },
+    {
+      "id": 19,
+      "nimi": "Thyme",
+      "maara": 5,
+      "hylly_id": 5
+    },
+    {
+      "id": 20,
+      "nimi": "Unicorn blood",
+      "maara": 1,
+      "hylly_id": 6
+    },
+    {
+      "id": 21,
+      "nimi": "Valerian",
+      "maara": 8,
+      "hylly_id": 6
+    },
+    {
+      "id": 22,
+      "nimi": "Witches' Mummy",
+      "maara": 1,
+      "hylly_id": 6
+    },
+    {
+      "nimi": "Wiggentree",
+      "maara": "3",
+      "hylly_id": "6",
+      "id": 23
+    },
+    {
+      "nimi": "Unicorn Hair",
+      "maara": "1",
+      "hylly_id": "6",
+      "id": 24
+    }
+  ],
+  "hylly": [
+    {
+      "id": 1,
+      "lyhenne": "A-D"
+    },
+    {
+      "id": 2,
+      "lyhenne": "E-H"
+    },
+    {
+      "id": 3,
+      "lyhenne": "I-L"
+    },
+    {
+      "id": 4,
+      "lyhenne": "M-P"
+    },
+    {
+      "id": 5,
+      "lyhenne": "Q-T"
+    },
+    {
+      "id": 6,
+      "lyhenne": "U-Z"
+    }
+  ]
+}
