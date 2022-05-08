@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 const doSearchQuery = (nimi, maara, hylly_id) => {
     let r = [];
@@ -132,6 +133,15 @@ export const Tuotteet = () => {
 
     return (
         <div>
+            <nav
+                style={{
+                    borderBottom: "solid 1px",
+                    paddingBottom: "1rem",
+                }}
+            >
+                <Link to="/Etusivu">Etusivu</Link> |{" "}
+                <Link to="/Asiakas">Tuotteet</Link>
+            </nav>
             {
                 showEditForm ? <TuoteForm hylly={tyypit} onSave={onSave} onCancel={onCancel} tuote={tuoteModify}/> :
                     <div>
@@ -234,7 +244,7 @@ const Potions = (props) => {
     return (
         <div>
             { data.length === 0 ?
-                (showNotFound ? <p>Annetuilla hakuehdoilla ei löytynyt dataa</p> : '') :
+                (showNotFound ? <p>Annetuilla hakuehdoilla ei löytynyt tuotteita</p> : '') :
                 <table>
                     <thead>
                         <tr>

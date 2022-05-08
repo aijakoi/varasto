@@ -1,10 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 export default function Etusivu() {
   return (
     <div>
-        Etusivu
+          <nav
+              style={{
+                  borderBottom: "solid 1px",
+                  paddingBottom: "1rem",
+              }}
+          >
+              <Link to="/Etusivu">Etusivu</Link> |{" "}
+              <Link to="/Asiakas">Tuotteet</Link>
+          </nav>
+      <h1>Etusivu</h1>
     </div>
   );
 }
