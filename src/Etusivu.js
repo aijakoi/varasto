@@ -11,8 +11,9 @@ export default function Etusivu() {
                   paddingBottom: "1rem",
               }}
           >
-              <Link to="/Etusivu">Etusivu</Link> |{" "}
-              <Link to="/Asiakas">Tuotteet</Link>
+        <Link to="/Etusivu">Etusivu</Link> |{" "}
+        <Link to="/Haku">Hyllytiedot</Link> |{" "}
+        <Link to="/Tuote">Tuotteet</Link>
           </nav>
       <h1>Etusivu</h1>
     </div>

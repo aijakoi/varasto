@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-export default function App() {
+export default function Haku() {
   return (
     <div>
       <nav
@@ -15,6 +15,7 @@ export default function App() {
         <Link to="/Haku">Hyllytiedot</Link> |{" "}
         <Link to="/Tuote">Tuotteet</Link>
       </nav>
+      <h1>Tähän haetaan kaikki hyllytiedot</h1>
     </div>
   );
 }

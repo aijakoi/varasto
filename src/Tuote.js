@@ -139,8 +139,9 @@ export const Tuotteet = () => {
                     paddingBottom: "1rem",
                 }}
             >
-                <Link to="/Etusivu">Etusivu</Link> |{" "}
-                <Link to="/Asiakas">Tuotteet</Link>
+        <Link to="/Etusivu">Etusivu</Link> |{" "}
+        <Link to="/Haku">Hyllytiedot</Link> |{" "}
+        <Link to="/Tuote">Tuotteet</Link>
             </nav>
             {
                 showEditForm ? <TuoteForm hylly={tyypit} onSave={onSave} onCancel={onCancel} tuote={tuoteModify}/> :
