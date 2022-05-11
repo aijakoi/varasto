@@ -13,10 +13,10 @@
       "hylly_id": 1
     },
     {
-      "id": 3,
       "nimi": "Caterpillar",
-      "maara": 4,
-      "hylly_id": 1
+      "maara": "5",
+      "hylly_id": 1,
+      "id": 3
     },
     {
       "id": 4,
@@ -91,10 +91,10 @@
       "hylly_id": 4
     },
     {
-      "id": 16,
       "nimi": "Peppermint",
-      "maara": 10,
-      "hylly_id": 4
+      "maara": "9",
+      "hylly_id": 4,
+      "id": 16
     },
     {
       "id": 17,
