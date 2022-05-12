@@ -19,7 +19,7 @@ function NimiHaku(props) {
       nimi_haku = "?nimi=" + nimi;
       haku = nimi_haku;
     }
-    if (hylly_id != -1) {
+    if (hylly_id !== -1) {
       hylly_haku = "?hylly_id=" + hylly_id;
       haku = hylly_haku;
     }
@@ -51,7 +51,7 @@ function NimiHaku(props) {
   const tyypit = hylly.map(t => <option value={t.id} key={t.id}>{t.lyhenne}</option>)
 
 
-  return(
+  return (
     <div>
       <form>
         <label>Nimi: </label>
