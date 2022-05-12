@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
-
 let haku = " ";
 let nimi_haku = " ";
 let hylly_haku = " "
@@ -23,13 +22,14 @@ function NimiHaku(props) {
       hylly_haku = "?hylly_id=" + hylly_id;
       haku = hylly_haku;
     }
+
     setLoading("Lataa...");
     setTuotteet([]);
     let response = await fetch ("http://localhost:3004/tuote" + haku);
     let data = await response.json();
     setTuotteet(data);
     setLoading(" ");
-    if(data === " ") {
+    if(data.length == 0) {
       setLoading("Ei hakutuloksia");
     }
   }
@@ -63,7 +63,7 @@ function NimiHaku(props) {
       </form>
       <button onClick={() => fetchData()}>Hae</button>
       {tuotteet.map((tuote) => {
-      return <Potions tuote={tuote} />;
+      return <Potions tuote={tuote} tyypit={tyypit} />;
     })}
     {loading}
     </div>
@@ -108,5 +108,4 @@ const Potions = (props) => {
       </table>
     </div>
   )
-
 }

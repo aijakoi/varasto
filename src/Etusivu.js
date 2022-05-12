@@ -13,7 +13,8 @@ export default function Etusivu() {
           >
         <Link to="/Etusivu">Etusivu</Link> |{" "}
         <Link to="/Haku">Hyllytiedot</Link> |{" "}
-        <Link to="/Tuote">Tuotteet</Link>
+        <Link to="/Tuote">Tuotteet</Link> |{" "}
+        <Link to="/Muokkaa">Muokkaa</Link>
           </nav>
       <h1>Etusivu</h1>
     </div>

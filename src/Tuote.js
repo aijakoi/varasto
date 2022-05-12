@@ -146,20 +146,6 @@ export const Tuotteet = () => {
             {
                 showEditForm ? <TuoteForm hylly={tyypit} onSave={onSave} onCancel={onCancel} tuote={tuoteModify}/> :
                     <div>
-                        <label>
-                            Nimi:
-                            <input type="text" value={nimi} onChange={e => setNimi(e.target.value)} />
-                        </label>
-                        <label>
-                            Määrä:
-                            <input type="text" value={maara} onChange={e => setMaara(e.target.value)} />
-                        </label>
-                        <label>
-                            Hylly:
-                            <select value={hylly_id} onChange={e => setHylly_id(e.target.value)}>
-                                {tyypit}
-                            </select>
-                        </label>
                         <button onClick={() => haeClicked()}>Hae</button>
                         <button onClick={() => setshowEditForm(true)}>Lisää uusi</button>
 

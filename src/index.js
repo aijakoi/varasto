@@ -10,13 +10,12 @@ import Haku from './Haku';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-  <Routes>
-  <Route path="/" element={<App />} />
-  <Route path="Etusivu" element={<Etusivu />} />
-  <Route path="Haku" element={<Haku />} />
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="Etusivu" element={<Etusivu />} />
+      <Route path="Haku" element={<Haku />} />
       <Route path="Tuote" element={<Tuotteet />} />
-  </Routes>
-
+    </Routes>
   </BrowserRouter>
 );
 
