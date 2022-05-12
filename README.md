@@ -1,4 +1,5 @@
-# Perinteisen react-sovelluksen komentojen lisäksi anna seuraava komento:
+# Webohjelmointi-kurssin harjoitustyö.
+Perinteisen react-sovelluksen komentojen lisäksi anna seuraava komento:
 npm install @material-ui/core @material-ui/icons react-router-dom
 
 Json-server pyörii portissa 3004, joten anna komento:
