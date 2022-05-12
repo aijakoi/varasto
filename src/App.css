@@ -1,50 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 
-.nav{
+.nav {
   font-size: 25px;
   color: #D8DFDB;
   text-align: center;
   padding: 20px;
   font-family: 'Macondo', cursive;
 }
+
 a {
   color: #D8DFDB;
 }
+
 a:hover {
-   color: #00ff00
+  color: #00ff00
 }
-.haku{
+
+.haku {
   text-align: center;
   font-family: 'Macondo', cursive;
   font-size: large;
 }
+
 .select {
   background-color: #D8DFDB;
   font-family: 'Macondo', cursive;
   padding: 5px;
   font-size: large;
 }
-.button{
+
+.button {
   background-color: #D8DFDB;
   font-family: 'Macondo', cursive;
   padding: 10px;
   font-size: large;
 }
+
 .form {
   padding: 15px;
 }
-table, td {
+
+table,
+td {
   font-family: 'Macondo', cursive;
   padding: 5px;
   font-size: large;
   border-bottom: 1px solid #D8DFDB;
 }
-.edit{
+
+.edit {
   font-size: 25px;
   color: #D8DFDB;
   text-align: center;
   padding: 20px;
   font-family: 'Macondo', cursive;
 }
-
-

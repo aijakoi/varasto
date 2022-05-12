@@ -5,7 +5,7 @@ import Etusivu from "./Etusivu";
 export default function App() {
   return (
     <div>
-      <Etusivu/>
+      <Etusivu />
     </div>
   );
 }

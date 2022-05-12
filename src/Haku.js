@@ -83,7 +83,7 @@ export default function Haku() {
       <nav className="nav">
         <Link to="/Etusivu">Etusivu</Link> |{" "}
         <Link to="/Haku">Hyllytiedot</Link> |{" "}
-        <Link to="/Tuote">Tuotteet</Link>
+        <Link to="/Tuote">Hallitse tuotetietoja</Link>
       </nav>
       <NimiHaku />
     </div>
@@ -101,7 +101,7 @@ const Potions = (props) => {
         fontSize="30px">
         <List>
           <ListItem>{props.tuote.nimi} , {props.tuote.maara} kpl</ListItem>
-          <Divider/>
+          <Divider />
         </List>
       </Box>
 

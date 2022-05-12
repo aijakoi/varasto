@@ -125,6 +125,7 @@ export const Tuotteet = () => {
     }
 
     const onCancel = () => setshowEditForm(false);
+
     const onSave = (uusiTuote) => {
         if (uusiTuote.id > 0)
             setModifiedTuote(uusiTuote)
@@ -138,7 +139,7 @@ export const Tuotteet = () => {
             <nav className='nav'>
                 <Link to="/Etusivu">Etusivu</Link> |{" "}
                 <Link to="/Haku">Hyllytiedot</Link> |{" "}
-                <Link to="/Tuote">Tuotteet</Link>
+                <Link to="/Tuote">Hallitse tuotetietoja</Link>
             </nav>
             <Box display="flex"
                 alignItems="center"

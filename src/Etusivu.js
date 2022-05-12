@@ -12,17 +12,17 @@ export default function Etusivu() {
       <nav className="nav">
         <Link to="/Etusivu">Etusivu</Link> |{" "}
         <Link to="/Haku">Hyllytiedot</Link> |{" "}
-        <Link to="/Tuote">Tuotteet</Link>
+        <Link to="/Tuote">Hallitse tuotetietoja</Link>
       </nav>
       <Card >
-      <CardMedia
-        component="img"
-        sx={{ display: 'flex' }}
-        image={Slytherin}
-        alt="logo"
-      />
+        <CardMedia
+          component="img"
+          sx={{ display: 'flex' }}
+          image={Slytherin}
+          alt="logo"
+        />
       </Card>
-      
+
     </div>
   );
 }

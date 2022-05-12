@@ -26,14 +26,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ThemeProvider theme={themeGreen}>
     <CssBaseline>
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="Etusivu" element={<Etusivu />} />
-      <Route path="Haku" element={<Haku />} />
-      <Route path="Tuote" element={<Tuotteet />} />
-    </Routes>
-  </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="Etusivu" element={<Etusivu />} />
+          <Route path="Haku" element={<Haku />} />
+          <Route path="Tuote" element={<Tuotteet />} />
+        </Routes>
+      </BrowserRouter>
     </CssBaseline>
   </ThemeProvider>
 
