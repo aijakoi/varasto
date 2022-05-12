@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import { List, ListItem } from "@material-ui/core";
 
 let haku = " ";
 let nimi_haku = " ";
@@ -29,6 +30,7 @@ function NimiHaku(props) {
     let data = await response.json();
     setTuotteet(data);
     setLoading(" ");
+    setHylly_id(-1);
     if(data.length == 0) {
       setLoading("Ei hakutuloksia");
     }
@@ -92,20 +94,9 @@ const Potions = (props) => {
 
   return(
     <div>
-      <table>
-        <thead>
-          <tr>
-            <td>Nimi</td>
-            <td>Määrä</td>
-            <td>Hylly</td>
-          </tr>
-        </thead>
-        <tbody>
-          <td>{props.tuote.nimi}</td>
-          <td>{props.tuote.maara}</td>
-          <td>{props.tuote.hylly_id}</td>
-        </tbody>
-      </table>
+      <List>
+        <ListItem>{props.tuote.nimi} , {props.tuote.maara} kpl, {props.tuote.hylly_id}</ListItem>
+      </List>
     </div>
   )
 }
