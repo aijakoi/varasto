@@ -17,7 +17,34 @@ a:hover {
   text-align: center;
   font-family: 'Macondo', cursive;
   font-size: large;
-  
+}
+.select {
+  background-color: #D8DFDB;
+  font-family: 'Macondo', cursive;
+  padding: 5px;
+  font-size: large;
+}
+.button{
+  background-color: #D8DFDB;
+  font-family: 'Macondo', cursive;
+  padding: 10px;
+  font-size: large;
+}
+.form {
+  padding: 15px;
+}
+table, td {
+  font-family: 'Macondo', cursive;
+  padding: 5px;
+  font-size: large;
+  border-bottom: 1px solid #D8DFDB;
+}
+.edit{
+  font-size: 25px;
+  color: #D8DFDB;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Macondo', cursive;
 }
 
 

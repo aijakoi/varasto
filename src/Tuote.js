@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import "./App.css";
+import { Box, TextField } from "@material-ui/core";
 
 const doSearchQuery = (nimi, maara, hylly_id) => {
     let r = [];
@@ -133,29 +135,28 @@ export const Tuotteet = () => {
 
     return (
         <div>
-            <nav
-                style={{
-                    borderBottom: "solid 1px",
-                    paddingBottom: "1rem",
-                }}
-            >
+            <nav className='nav'>
                 <Link to="/Etusivu">Etusivu</Link> |{" "}
                 <Link to="/Haku">Hyllytiedot</Link> |{" "}
                 <Link to="/Tuote">Tuotteet</Link>
             </nav>
-            {
-                showEditForm ? <TuoteForm hylly={tyypit} onSave={onSave} onCancel={onCancel} tuote={tuoteModify} /> :
-                    <div>
+            <Box display="flex"
+                alignItems="center"
+                justifyContent="center"
+                fontSize="30px">
+                {
+                    showEditForm ? <TuoteForm hylly={tyypit} onSave={onSave} onCancel={onCancel} tuote={tuoteModify} /> :
+                        <div >
 
-                        <button onClick={() => haeClicked()}>Hae</button>
-                        <button onClick={() => setshowEditForm(true)}>Lisää uusi</button>
+                            <button className='button' onClick={() => haeClicked()}>Hae</button>
+                            <button className='button' onClick={() => setshowEditForm(true)}>Lisää uusi</button>
+                            {
+                                renderTable()
+                            }
+                        </div>
+                }
+            </Box>
 
-                        <h4>Tuotteet</h4>
-                        {
-                            renderTable()
-                        }
-                    </div>
-            }
         </div>
     )
 }
@@ -181,24 +182,30 @@ const TuoteForm = (props) => {
     }, [tuote])
 
     return (
-        <div>
+        <div className='edit'>
             {tuote ? <h4>Tuotteen muokkaaminen</h4> : <h4>Uuden tuotteen lisääminen</h4>}
             <label>
                 Nimi:
-                <input type="text" value={nimi} onChange={e => setNimi(e.target.value)} />
+                <TextField
+                    id="filled-search"
+                    type="search"
+                    variant="filled" value={nimi} onChange={e => setNimi(e.target.value)} />
             </label>
             <label>
                 Määrä:
-                <input type="text" value={maara} onChange={e => setMaara(e.target.value)} />
+                <TextField
+                    id="filled-search"
+                    type="search"
+                    variant="filled" value={maara} onChange={e => setMaara(e.target.value)} />
             </label>
             <label>
                 Hylly:
-                <select value={hylly_id} onChange={e => setHylly_id(e.target.value)}>
+                <select className='select' value={hylly_id} onChange={e => setHylly_id(e.target.value)}>
                     {hylly}
                 </select>
             </label>
-            <button onClick={() => tallennaClicked()}>{tuote ? "Tallenna muutos" : "Tallenna"}</button>
-            <button onClick={() => onCancel()}>{tuote ? "Peruuta muokkaus" : "Peruuta"}</button>
+            <button className='button' onClick={() => tallennaClicked()}>{tuote ? "Tallenna muutos" : "Tallenna"}</button>
+            <button className='button' onClick={() => onCancel()}>{tuote ? "Peruuta muokkaus" : "Peruuta"}</button>
         </div>
     )
 }
@@ -220,8 +227,8 @@ const Potions = (props) => {
         <td>{t.nimi}</td>
         <td>{t.maara}</td>
         <td>{t.hylly_id}</td>
-        <td><button onClick={() => deleteClicked(t)}>Poista</button></td>
-        <td><button onClick={() => onEdit(t)}>Muokkaa</button></td>
+        <td><button className='button' onClick={() => deleteClicked(t)}>Poista</button></td>
+        <td><button className='button' onClick={() => onEdit(t)}>Muokkaa</button></td>
     </tr>)
 
     const deleteClicked = (a) => {

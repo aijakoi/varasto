@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { List, ListItem, Box } from "@material-ui/core";
+import { List, ListItem, Box, TextField, Divider } from "@material-ui/core";
 import "./App.css";
 
 let haku = " ";
@@ -16,7 +16,7 @@ function NimiHaku(props) {
 
   async function fetchData() {
     haku = " ";
-    if(nimi !== "") {
+    if (nimi !== "") {
       nimi_haku = "?nimi=" + nimi;
       haku = nimi_haku;
     }
@@ -27,24 +27,24 @@ function NimiHaku(props) {
 
     setLoading("Lataa...");
     setTuotteet([]);
-    let response = await fetch ("http://localhost:3004/tuote" + haku);
+    let response = await fetch("http://localhost:3004/tuote" + haku);
     let data = await response.json();
     setTuotteet(data);
     setLoading(" ");
     setHylly_id(-1);
-    if(data.length == 0) {
+    if (data.length == 0) {
       setLoading("Ei hakutuloksia");
     }
   }
 
   useEffect(() => {
     const fetchHylly = async () => {
-        const r = await fetch('http://localhost:3004/hylly');
-        const data = await r.json();
-        setHylly([{id:-1, lyhenne: "Valitse"}, ...data]);
+      const r = await fetch('http://localhost:3004/hylly');
+      const data = await r.json();
+      setHylly([{ id: -1, lyhenne: "Valitse" }, ...data]);
     }
     fetchHylly();
-}, [])
+  }, [])
 
 
   useEffect(() => {
@@ -56,19 +56,23 @@ function NimiHaku(props) {
 
   return (
     <div>
-      <form>
-        <label>Nimi: </label>
-        <input type="text" name="nimi" onChange={(event) => setNimi(event.target.value)}></input>
-        <label>Hylly: </label>
-        <select value={hylly_id} onChange={e => setHylly_id(e.target.value)}>
+      <form className="form">
+        <label> Nimi: </label>
+        <TextField
+          id="filled-search"
+          type="search"
+          variant="filled" name="nimi" onChange={(event) => setNimi(event.target.value)} />
+        <label> Hylly: </label>
+        <select className="select" value={hylly_id} onChange={e => setHylly_id(e.target.value)}>
           {tyypit}
         </select>
       </form>
-      <button onClick={() => fetchData()}>Hae</button>
+      <button className="button" variant="contained" onClick={() => fetchData()}>Hae</button>
       {tuotteet.map((tuote) => {
-      return <Potions tuote={tuote} tyypit={tyypit} />;
-    })}
-    {loading}
+        return <Potions tuote={tuote} tyypit={tyypit} />;
+      })}
+      <br></br>
+      {loading}
     </div>
   )
 }
@@ -88,15 +92,17 @@ export default function Haku() {
 
 const Potions = (props) => {
 
-  return(
+  return (
     <div>
-      <Box         
-      display="flex" 
+      <Box
+        display="flex"
         alignItems="center"
-        justifyContent="center">
-      <List>
-        <ListItem>{props.tuote.nimi} , {props.tuote.maara} kpl</ListItem>
-      </List>
+        justifyContent="center"
+        fontSize="30px">
+        <List>
+          <ListItem>{props.tuote.nimi} , {props.tuote.maara} kpl</ListItem>
+          <Divider/>
+        </List>
       </Box>
 
     </div>
