@@ -1,7 +1,23 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
+.nav{
+  font-size: 25px;
+  color: #D8DFDB;
   text-align: center;
+  padding: 20px;
+  font-family: 'Macondo', cursive;
+}
+a {
+  color: #D8DFDB;
+}
+a:hover {
+   color: #00ff00
+}
+.haku{
+  text-align: center;
+  font-family: 'Macondo', cursive;
+  font-size: large;
+  
 }
 
-.img {
-  position: center;
-}
+

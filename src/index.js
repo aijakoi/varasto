@@ -9,13 +9,15 @@ import Haku from './Haku';
 import { ThemeProvider, createTheme } from '@material-ui/core';
 import { CssBaseline } from '@material-ui/core';
 
+
 const themeGreen = createTheme({
   palette: {
     background: {
-      default: "#052715"
+      default: "#044302"
     },
     text: {
       primary: "#D8DFDB"
+
     }
   }
 });

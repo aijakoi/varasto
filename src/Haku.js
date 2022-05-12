@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { List, ListItem } from "@material-ui/core";
+import { List, ListItem, Box } from "@material-ui/core";
+import "./App.css";
 
 let haku = " ";
 let nimi_haku = " ";
@@ -74,13 +75,8 @@ function NimiHaku(props) {
 
 export default function Haku() {
   return (
-    <div>
-      <nav
-        style={{
-          borderBottom: "solid 1px",
-          paddingBottom: "1rem",
-        }}
-      >
+    <div className="haku">
+      <nav className="nav">
         <Link to="/Etusivu">Etusivu</Link> |{" "}
         <Link to="/Haku">Hyllytiedot</Link> |{" "}
         <Link to="/Tuote">Tuotteet</Link>
@@ -94,9 +90,15 @@ const Potions = (props) => {
 
   return(
     <div>
+      <Box         
+      display="flex" 
+        alignItems="center"
+        justifyContent="center">
       <List>
-        <ListItem>{props.tuote.nimi} , {props.tuote.maara} kpl, {props.tuote.hylly_id}</ListItem>
+        <ListItem>{props.tuote.nimi} , {props.tuote.maara} kpl</ListItem>
       </List>
+      </Box>
+
     </div>
   )
 }

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const doSearchQuery = (nimi, maara, hylly_id) => {
     let r = [];
-    if (nimi != '') r.push("nimi = " + nimi);
-    if (maara != '') r.push("määrä = " + maara);
-    if (hylly_id != '-1') r.push("hylly_id = " + hylly_id);
+    if (nimi !== '') r.push("nimi = " + nimi);
+    if (maara !== '') r.push("määrä = " + maara);
+    if (hylly_id !== '-1') r.push("hylly_id = " + hylly_id);
     r.push(Date.now())
 
     return r.join("&")
