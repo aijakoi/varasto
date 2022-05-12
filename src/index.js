@@ -9,7 +9,7 @@ import Haku from './Haku';
 import { ThemeProvider, createTheme } from '@material-ui/core';
 import { CssBaseline } from '@material-ui/core';
 
-
+// luodaan sivustolle teema, joka ThemeProviderilla tarjotaan jokaiselle sivulle
 const themeGreen = createTheme({
   palette: {
     background: {
@@ -17,7 +17,6 @@ const themeGreen = createTheme({
     },
     text: {
       primary: "#D8DFDB"
-
     }
   }
 });
@@ -36,7 +35,6 @@ root.render(
       </BrowserRouter>
     </CssBaseline>
   </ThemeProvider>
-
 );
 
 

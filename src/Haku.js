@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { List, ListItem, Box, TextField, Divider } from "@material-ui/core";
 import "./App.css";
 
+// alustetaan nimen ja hyllyn tiedoilla haut aluksi tyhjäksi
 let haku = " ";
 let nimi_haku = " ";
 let hylly_haku = " "
@@ -51,8 +52,8 @@ function NimiHaku(props) {
     fetchData();
   }, []);
 
+  // mapataan hyllyjen tiedot select-valikkoon sopivaksi
   const tyypit = hylly.map(t => <option value={t.id} key={t.id}>{t.lyhenne}</option>)
-
 
   return (
     <div>
@@ -61,7 +62,9 @@ function NimiHaku(props) {
         <TextField
           id="filled-search"
           type="search"
-          variant="filled" name="nimi" onChange={(event) => setNimi(event.target.value)} />
+          variant="filled" 
+          name="nimi" 
+          onChange={(event) => setNimi(event.target.value)} />
         <label> Hylly: </label>
         <select className="select" value={hylly_id} onChange={e => setHylly_id(e.target.value)}>
           {tyypit}
@@ -92,6 +95,7 @@ export default function Haku() {
 
 const Potions = (props) => {
 
+  // palautetaan listamuodossa käyttäjän hakemat tiedot
   return (
     <div>
       <Box

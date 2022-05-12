@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./App.css";
 import { Box, TextField } from "@material-ui/core";
 
+// query-muuttuja, jota hyödynnetään tuotetietojen muokkaamisessa ja poistamisessa
 const doSearchQuery = (nimi, maara, hylly_id) => {
     let r = [];
     if (nimi !== '') r.push("nimi = " + nimi);
@@ -14,7 +15,6 @@ const doSearchQuery = (nimi, maara, hylly_id) => {
 }
 
 export const Tuotteet = () => {
-
     const [nimi, setNimi] = useState('');
     const [maara, setMaara] = useState('');
     const [hylly_id, setHylly_id] = useState(-1);
@@ -29,6 +29,7 @@ export const Tuotteet = () => {
     const [modifiedTuote, setModifiedTuote] = useState(null);
     const [showEditForm, setshowEditForm] = useState(false);
 
+    // haetaan hyllyjen tiedot
     useEffect(() => {
         const fetchHylly = async () => {
             const r = await fetch('http://localhost:3004/hylly');
@@ -37,7 +38,8 @@ export const Tuotteet = () => {
         }
         fetchHylly();
     }, [])
-
+    
+    // haetaan tuotteen tiedot
     useEffect(() => {
         const fetchTuote = async () => {
             setLoading(true)
@@ -46,9 +48,10 @@ export const Tuotteet = () => {
             setLoading(false);
             setTuotteet(data);
         }
-        if (query != '') fetchTuote();
+        if (query !== '') fetchTuote();
     }, [query])
 
+    // haetaan tuotetiedot id:n mukaan muokkaamista varten
     useEffect(() => {
         const fetchTuoteById = async () => {
             const r = await fetch('http://localhost:3004/tuote/' + muutettavaid);
@@ -59,6 +62,7 @@ export const Tuotteet = () => {
         if (muutettavaid > 0) fetchTuoteById();
     }, [muutettavaid])
 
+    // tuotteen poisto
     useEffect(() => {
         const deleteTuote = async () => {
             const r = await fetch('http://localhost:3004/tuote/' + tuoteDelete.id, {
@@ -69,6 +73,7 @@ export const Tuotteet = () => {
         if (tuoteDelete != null) deleteTuote();
     }, [tuoteDelete])
 
+    // uuden tuotteen lisääminen, näissä taikajuomahyllyissä on loputtomat varastot :P
     useEffect(() => {
         const insertTuote = async () => {
             const r = await fetch('http://localhost:3004/tuote/', {
@@ -84,6 +89,7 @@ export const Tuotteet = () => {
         if (tuoteInsert != null) insertTuote();
     }, [tuoteInsert])
 
+    // tuotteen muokkaaminen
     useEffect(() => {
         const modifyTuote = async () => {
             const r = await fetch('http://localhost:3004/tuote/' + modifiedTuote.id, {
@@ -100,6 +106,7 @@ export const Tuotteet = () => {
         if (modifiedTuote != null) modifyTuote();
     }, [modifiedTuote])
 
+    // hae-nappia painamalla asetetaan käyttäjän syöttämät tiedot query-muuttujaan
     const haeClicked = () => {
         setQuery(doSearchQuery(nimi, maara, hylly_id));
     }
@@ -116,7 +123,6 @@ export const Tuotteet = () => {
     const tyypit = hylly.map(t => <option value={t.id} key={t.id}>{t.lyhenne}</option>)
 
     const renderTable = () => {
-
         if (loading)
             return <p>Lataa...</p>;
         else {
@@ -157,7 +163,6 @@ export const Tuotteet = () => {
                         </div>
                 }
             </Box>
-
         </div>
     )
 }
@@ -182,6 +187,7 @@ const TuoteForm = (props) => {
         }
     }, [tuote])
 
+    // uuden tuotteen lisääminen ja vanhan tuotteen muokkaaminen
     return (
         <div className='edit'>
             {tuote ? <h4>Tuotteen muokkaaminen</h4> : <h4>Uuden tuotteen lisääminen</h4>}

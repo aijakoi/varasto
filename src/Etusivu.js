@@ -4,8 +4,6 @@ import Slytherin from './Slytherin.png'
 import "./App.css";
 import { Card, CardMedia } from "@material-ui/core";
 
-
-
 export default function Etusivu() {
   return (
     <div>
