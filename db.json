@@ -7,10 +7,10 @@
       "id": 1
     },
     {
-      "id": 2,
       "nimi": "Blood",
-      "maara": 7,
-      "hylly_id": 1
+      "maara": "6",
+      "hylly_id": 1,
+      "id": 2
     },
     {
       "nimi": "Caterpillar",
@@ -135,19 +135,19 @@
     {
       "nimi": "Wiggentree",
       "maara": "3",
-      "hylly_id": "6",
+      "hylly_id": 6,
       "id": 23
     },
     {
       "nimi": "Unicorn Hair",
       "maara": "1",
-      "hylly_id": "6",
+      "hylly_id": 6,
       "id": 24
     },
     {
       "nimi": "White Spirit",
       "maara": "1",
-      "hylly_id": "6",
+      "hylly_id": 6,
       "id": 25
     }
   ],

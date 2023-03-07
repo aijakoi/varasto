@@ -15,28 +15,31 @@ function NimiHaku(props) {
   const [hylly_id, setHylly_id] = useState(-1);
   const [hylly, setHylly] = useState([]);
 
-  async function fetchData() {
-    haku = " ";
-    if (nimi !== "") {
-      nimi_haku = "?nimi=" + nimi;
-      haku = nimi_haku;
-    }
-    if (hylly_id !== -1) {
-      hylly_haku = "?hylly_id=" + hylly_id;
-      haku = hylly_haku;
-    }
 
-    setLoading("Lataa...");
-    setTuotteet([]);
-    let response = await fetch("http://localhost:3004/tuote" + haku);
-    let data = await response.json();
-    setTuotteet(data);
-    setLoading(" ");
-    setHylly_id(-1);
-    if (data.length == 0) {
-      setLoading("Ei hakutuloksia");
-    }
+  async function fetchData() {
+  haku = " ";
+  if (nimi !== "") {
+    nimi_haku = "?nimi_like=" + nimi;
+    haku = nimi_haku;
   }
+  if (hylly_id !== -1) {
+    hylly_haku = "?hylly_id=" + hylly_id;
+    haku = hylly_haku;
+  }
+
+
+  setLoading("Lataa...");
+  setTuotteet([]);
+  let response = await fetch("http://localhost:3004/tuote" + haku);
+  let data = await response.json();
+  setTuotteet(data);
+  setLoading(" ");
+  setHylly_id(-1);
+  if (data.length == 0) {
+    setLoading("Ei hakutuloksia");
+  }
+}
+
 
   useEffect(() => {
     const fetchHylly = async () => {
@@ -65,12 +68,20 @@ function NimiHaku(props) {
           variant="filled" 
           name="nimi" 
           onChange={(event) => setNimi(event.target.value)} />
+          
         <label> Hylly: </label>
         <select className="select" value={hylly_id} onChange={e => setHylly_id(e.target.value)}>
           {tyypit}
         </select>
       </form>
-      <button className="button" variant="contained" onClick={() => fetchData()}>Hae</button>
+      <button
+  className="button"
+  variant="contained"
+  onClick={() => fetchData()}
+>
+  Hae
+</button>
+
       {tuotteet.map((tuote) => {
         return <Potions tuote={tuote} tyypit={tyypit} />;
       })}
@@ -108,7 +119,6 @@ const Potions = (props) => {
           <Divider />
         </List>
       </Box>
-
     </div>
   )
 }

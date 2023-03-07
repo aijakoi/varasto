@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 
+body {
+  background-image: url('./kuva.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(5px);
+}
+
 .nav {
   font-size: 25px;
   color: #D8DFDB;

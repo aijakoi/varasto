@@ -218,11 +218,29 @@ const TuoteForm = (props) => {
 }
 
 const Potions = (props) => {
-
     const { data, onDelete, onEdit } = props;
-    const [showNotFound, setShowNotFound] = useState(true)
+    const [showNotFound, setShowNotFound] = useState(true);
+
+    // Luo tila järjestetylle tuotelistalle
+    const [sortedData, setSortedData] = useState([]);
+
+    // Objekti hyllyn ID:t vastaaville lyhenteille
+    const shelfShortNames = {
+        1: "A-D",
+        2: "E-H",
+        3: "I-L",
+        4: "M-P",
+        5: "Q-T",
+        6: "U-Z",
+    };
 
     useEffect(() => {
+        // Järjestä tuotelista aakkosjärjestykseen aina, kun data-tila päivittyy
+        const sorted = [...data].sort((a, b) =>
+            a.nimi.localeCompare(b.nimi)
+        );
+        setSortedData(sorted);
+
         const timer = setTimeout(() => {
             setShowNotFound(false);
         }, 2000);
@@ -230,36 +248,51 @@ const Potions = (props) => {
         return () => clearTimeout(timer);
     }, [data]);
 
-    const rows = data.map(t => <tr key={t.id}>
-        <td>{t.nimi}</td>
-        <td>{t.maara}</td>
-        <td>{t.hylly_id}</td>
-        <td><button className='button' onClick={() => deleteClicked(t)}>Poista</button></td>
-        <td><button className='button' onClick={() => onEdit(t)}>Muokkaa</button></td>
-    </tr>)
+    const rows = sortedData.map((t) => (
+        <tr key={t.id}>
+            <td>{t.nimi}</td>
+            <td>{t.maara}</td>
+            <td>{shelfShortNames[t.hylly_id]}</td>
+            <td>
+                <button className="button" onClick={() => onEdit(t)}>
+                    Muokkaa
+                </button>
+            </td>
+            <td>
+                <button
+                    className="button"
+                    onClick={() => deleteClicked(t)}
+                >
+                    Poista
+                </button>
+            </td>
+        </tr>
+    ));
 
     const deleteClicked = (a) => {
-        const r = window.confirm(`Haluatko varmasti poistaa tuotteen ${a.nimi}?`)
+        const r = window.confirm(
+            `Haluatko varmasti poistaa tuotteen ${a.nimi}?`
+        );
         if (r) onDelete(a);
-    }
+    };
 
     return (
         <div>
-            {data.length === 0 ?
-                (showNotFound ? <p>Lataa...</p> : '') :
-                <table>
-                    <thead>
-                        <tr>
-                            <td>Nimi</td>
-                            <td>Määrä</td>
-                            <td>Hylly</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {rows}
-                    </tbody>
-                </table>
-            }
+            {showNotFound && data.length === 0 && (
+                <p>Tuotteita ei löytynyt.</p>
+            )}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nimi</th>
+                        <th>Määrä</th>
+                        <th>Hylly</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>{rows}</tbody>
+            </table>
         </div>
-    )
-}
+    );
+};
