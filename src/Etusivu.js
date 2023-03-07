@@ -12,15 +12,6 @@ export default function Etusivu() {
         <Link to="/Haku">Hyllytiedot</Link> |{" "}
         <Link to="/Tuote">Hallitse tuotetietoja</Link>
       </nav>
-      <Card >
-        <CardMedia
-          component="img"
-          sx={{ display: 'flex' }}
-          image={Slytherin}
-          alt="logo"
-        />
-      </Card>
-
     </div>
   );
 }
